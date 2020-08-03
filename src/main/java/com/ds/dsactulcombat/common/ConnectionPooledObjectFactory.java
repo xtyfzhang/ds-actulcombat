@@ -25,7 +25,7 @@ public class ConnectionPooledObjectFactory implements PooledObjectFactory<BaseCo
     public PooledObject<BaseConnection> makeObject() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://106.13.226.223:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true",
+                "jdbc:mysql://106.13.226.223:3306/user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true",
                 "root",
                 "L8fRd2*i(dE6"
         );

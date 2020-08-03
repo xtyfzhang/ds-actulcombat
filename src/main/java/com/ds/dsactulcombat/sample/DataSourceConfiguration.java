@@ -10,9 +10,5 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceConfiguration {
 
-    @Bean
-    @Primary
-    public DataSource dataSource(){
-        return new BaseDataSource();
-    }
+
 }
