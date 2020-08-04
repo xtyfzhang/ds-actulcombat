@@ -25,7 +25,11 @@ public class BaseDataSource implements DataSource {
 
     @Override
     public Connection getConnection() throws SQLException {
-        return null;
+        try {
+            return this.pool.borrowObject();
+        } catch (Exception e) {
+            throw new SQLException("获取连接失败！",e);
+        }
     }
 
     public BaseDataSource() {
@@ -36,41 +40,41 @@ public class BaseDataSource implements DataSource {
 
     @Override
     public Connection getConnection(String username, String password) throws SQLException {
-        return null;
+        return this.getConnection();
     }
 
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return false;
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public PrintWriter getLogWriter() throws SQLException {
-        return null;
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public void setLogWriter(PrintWriter out) throws SQLException {
-
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public void setLoginTimeout(int seconds) throws SQLException {
-
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public int getLoginTimeout() throws SQLException {
-        return 0;
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 
     @Override
     public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-        return null;
+        throw new UnsupportedOperationException("不支持的操作！");
     }
 }

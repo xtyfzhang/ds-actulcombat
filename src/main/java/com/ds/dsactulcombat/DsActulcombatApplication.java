@@ -21,7 +21,7 @@ public class DsActulcombatApplication {
         SpringApplication.run(DsActulcombatApplication.class, args);
     }
 
-    @Bean
+   @Bean
     @Primary
     public BaseDataSource dataSource(){
         return new BaseDataSource();
